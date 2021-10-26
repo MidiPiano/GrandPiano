@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:adee3c2c7ae4887370ae9802cd58ab35e61c3b55bb4646b57b93893b993e07b6
-size 15
+# GrandPiano
+
+## Metronome SoundFont
+Put in MIDI note 76 (E₅) for a “tick” at velocity 127 for “downbeats” (first beat of a measure) and MIDI note 77 (F₅)
+for a “tack” at velocity 127 in stressed beats (e.g. the third in a 4/4 time signature), at velocity 80 for unstressed 
+beats (e.g. the second and fourth in a 4/4 time signature).
+
+Instrument: 
+- bank 0 preset 115 (Woodblock), bank 128 preset 48 (Orchestra Kit)
+- MIDI note 76 (E5, High Woodblock) = tick
+- MIDI note 77 (F5, Low Woodblock) = tack

@@ -80,7 +80,7 @@ import PianoView
 
     // TODO Error handling
     inputConductor = try? MidiInputConductor(keyboardHandler: piano, volumeHandler: self, midiSetupChangedHandler: self)
-    metronome = MetronomeInputConductor()
+    metronome = try? MetronomeInputConductor()
     metronome.data.tempo = BPM(bpm)
     outputConductor = MixerOutputConductor()
     try? outputConductor.addInput(inputConductor)

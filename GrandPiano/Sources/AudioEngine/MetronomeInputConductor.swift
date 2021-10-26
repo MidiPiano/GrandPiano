@@ -20,15 +20,15 @@
 
 import AudioKit
 import AudioKitEX
-import STKAudioKit
 
 struct MetronomeData {
   var isPlaying = false
   var tempo: BPM = 120
   var timeSignatureTop: Int = 4
-  var downbeatNoteNumber = MIDINoteNumber(ShakerType.bigRocks.rawValue)
-  var beatNoteNumber = MIDINoteNumber(ShakerType.littleRocks.rawValue)
-  var beatNoteVelocity = 100.0
+  var downbeatNoteNumber = MIDINoteNumber(76)
+  var downbeatNoteVelocity = 127.0
+  var beatNoteNumber = MIDINoteNumber(77)
+  var beatNoteVelocity = 127.0
   var currentBeat = 0
 }
 
@@ -44,7 +44,7 @@ class MetronomeInputConductor: InputConductor {
     }
   }
 
-  public private(set) var input: Shaker
+  public private(set) var input: AppleSampler
 
 
   // MARK: - Private Properties
@@ -53,8 +53,10 @@ class MetronomeInputConductor: InputConductor {
 
   // MARK: - Initialization
 
-  init() {
-    input = Shaker()
+  init() throws {
+    input = AppleSampler()
+    try input.loadSoundFont("Metronom", preset: 115, bank: 0)
+    input.volume = 1.0
     sequencer = Sequencer()
 
     _ = sequencer.addTrack(for: input)
@@ -68,7 +70,7 @@ class MetronomeInputConductor: InputConductor {
     track.length = Double(data.timeSignatureTop)
 
     track.clear()
-    track.sequence.add(noteNumber: data.downbeatNoteNumber, position: 0.0, duration: 0.4)
+    track.sequence.add(noteNumber: data.downbeatNoteNumber, velocity: MIDIVelocity(Int(data.downbeatNoteVelocity)), position: 0.0, duration: 0.4)
     let vel = MIDIVelocity(Int(data.beatNoteVelocity))
     for beat in 1 ..< data.timeSignatureTop {
       track.sequence.add(noteNumber: data.beatNoteNumber, velocity: vel, position: Double(beat), duration: 0.1)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E91940502728053D0028BDE8 /* MetronomeInputConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E919404F2728053D0028BDE8 /* MetronomeInputConductor.swift */; };
+		E91940542728918D0028BDE8 /* Metronom.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = E91940532728918D0028BDE8 /* Metronom.sf2 */; };
 		E92A81DF2724A23D008B3F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A81DE2724A23D008B3F27 /* AppDelegate.swift */; };
 		E92A81E12724A23D008B3F27 /* PianoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A81E02724A23D008B3F27 /* PianoViewController.swift */; };
 		E92A81E32724A23F008B3F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E92A81E22724A23F008B3F27 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		E919404F2728053D0028BDE8 /* MetronomeInputConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeInputConductor.swift; sourceTree = "<group>"; };
+		E91940532728918D0028BDE8 /* Metronom.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Metronom.sf2; sourceTree = "<group>"; };
 		E92A81DB2724A23D008B3F27 /* GrandPiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrandPiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92A81DE2724A23D008B3F27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E92A81E02724A23D008B3F27 /* PianoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				E92A81E22724A23F008B3F27 /* Assets.xcassets */,
 				E92A81E42724A23F008B3F27 /* Main.storyboard */,
 				E92A81E72724A23F008B3F27 /* GrandPiano.entitlements */,
+				E91940532728918D0028BDE8 /* Metronom.sf2 */,
 				E92A81F92724AEED008B3F27 /* Piano.sf2 */,
 			);
 			name = Ressources;
@@ -252,6 +255,7 @@
 			files = (
 				E92A81FA2724AEED008B3F27 /* Piano.sf2 in Resources */,
 				E92A81E32724A23F008B3F27 /* Assets.xcassets in Resources */,
+				E91940542728918D0028BDE8 /* Metronom.sf2 in Resources */,
 				E92A81E62724A23F008B3F27 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
