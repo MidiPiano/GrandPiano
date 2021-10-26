@@ -1,3 +1,50 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:27f9a0d1f348de1da65626026d12aa00dc552c5f0d0f29001a1b83f784a4c6e6
-size 1161
+//
+//  AudioEngineConductor.swift
+//  GrandPiano
+//
+//  Created by Thomas Bonk on 25.10.21.
+//  Copyright 2021 Thomas Bonk <thomas@meandmymac.de>
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
+
+import AudioKit
+
+class AudioEngineConductor: Conductor {
+
+  // MARK: - Public Properties
+
+  public private(set) var engine: AudioEngine
+
+
+  // MARK: - Initialization
+
+  init<Output>(output: Output) throws where Output: OutputConductor {
+    engine = AudioEngine()
+
+    stop()
+    engine.output = output.output
+    try start()
+  }
+
+
+  // MARK: - Conductor
+
+  func start() throws {
+    try engine.start()
+  }
+
+  func stop() {
+    engine.stop()
+  }
+}
