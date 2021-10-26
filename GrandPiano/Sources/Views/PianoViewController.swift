@@ -35,6 +35,28 @@ import PianoView
       setVolume(volume)
     }
   }
+  @objc dynamic internal var bpm: Int = 100 {
+    didSet {
+      let playing = metronome.input.isStarted
+
+      if playing {
+        metronome.stop()
+      }
+      metronome.data.tempo = BPM(bpm)
+      if playing {
+        try? metronome.start()
+      }
+    }
+  }
+  @objc dynamic internal var metronomeOn: Bool = false {
+    didSet {
+      if metronomeOn {
+        try? metronome.start()
+      } else {
+        metronome.stop()
+      }
+    }
+  }
 
   internal var log: Logger = {
     var logger = Logger(label: "PianoViewController")
@@ -47,6 +69,7 @@ import PianoView
   internal var inputConductor: MidiInputConductor!
   internal var outputConductor: MixerOutputConductor!
   internal var audioEngine: AudioEngineConductor!
+  internal var metronome: MetronomeInputConductor!
   internal var endpointInfos: [EndpointInfo] = []
 
 
@@ -57,8 +80,11 @@ import PianoView
 
     // TODO Error handling
     inputConductor = try? MidiInputConductor(keyboardHandler: piano, volumeHandler: self, midiSetupChangedHandler: self)
+    metronome = MetronomeInputConductor()
+    metronome.data.tempo = BPM(bpm)
     outputConductor = MixerOutputConductor()
     try? outputConductor.addInput(inputConductor)
+    try? outputConductor.addInput(metronome)
     audioEngine = try? AudioEngineConductor(output: outputConductor)
     try? inputConductor.start()
     try? outputConductor.start()
