@@ -44,6 +44,12 @@ class MetronomeInputConductor: InputConductor {
     }
   }
 
+  public var volume: Int = 50 {
+    didSet {
+      input.volume = Float(volume) / 100.0
+    }
+  }
+
   public private(set) var input: AppleSampler
 
 
@@ -56,7 +62,7 @@ class MetronomeInputConductor: InputConductor {
   init() throws {
     input = AppleSampler()
     try input.loadSoundFont("Metronom", preset: 115, bank: 0)
-    input.volume = 1.0
+    input.volume = 0.5
     sequencer = Sequencer()
 
     _ = sequencer.addTrack(for: input)

@@ -35,6 +35,11 @@ import PianoView
       setVolume(volume)
     }
   }
+  @objc dynamic internal var metronomeVolume: Int = 50 {
+    didSet {
+      metronome.volume = metronomeVolume
+    }
+  }
   @objc dynamic internal var bpm: Int = 100 {
     didSet {
       let playing = metronome.input.isStarted

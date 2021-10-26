@@ -835,20 +835,45 @@
                                             </binding>
                                         </connections>
                                     </stepper>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="okb-jO-Fbn">
+                                        <rect key="frame" x="823" y="27" width="49" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Volume" id="3Ia-uB-qgM">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5zx-jh-dUh">
+                                        <rect key="frame" x="878" y="19" width="104" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="5CF-vC-POf"/>
+                                        </constraints>
+                                        <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" numberOfTickMarks="9" sliderType="linear" id="ZN6-Ja-gxn"/>
+                                        <connections>
+                                            <binding destination="XfG-lQ-9wD" name="value" keyPath="metronomeVolume" id="cYW-Cg-6Yn">
+                                                <dictionary key="options">
+                                                    <bool key="NSValidatesImmediately" value="YES"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="tMK-O2-7Gf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aNA-Cf-5WT" secondAttribute="trailing" constant="8" symbolic="YES" id="1PZ-ah-Uzt"/>
                                     <constraint firstItem="VPx-LB-Ku2" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="2dU-JD-0FI"/>
                                     <constraint firstItem="nMA-Wm-ISK" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="3KK-7w-N5F"/>
+                                    <constraint firstItem="5zx-jh-dUh" firstAttribute="leading" secondItem="okb-jO-Fbn" secondAttribute="trailing" constant="10" id="4ZC-r4-yMC"/>
                                     <constraint firstItem="aNA-Cf-5WT" firstAttribute="leading" secondItem="nMA-Wm-ISK" secondAttribute="trailing" constant="15" id="5jG-hH-X4b"/>
                                     <constraint firstItem="aNA-Cf-5WT" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="99j-eg-sdh"/>
                                     <constraint firstItem="VPx-LB-Ku2" firstAttribute="leading" secondItem="V69-wI-og1" secondAttribute="trailing" constant="10" id="ANK-Lg-VbG"/>
                                     <constraint firstItem="nMA-Wm-ISK" firstAttribute="leading" secondItem="Vnu-0l-62l" secondAttribute="trailing" constant="10" id="BJ9-sQ-4Pw"/>
                                     <constraint firstItem="xbs-GV-RCI" firstAttribute="leading" secondItem="VPx-LB-Ku2" secondAttribute="trailing" constant="30" id="Grr-Yh-Wa0"/>
+                                    <constraint firstItem="okb-jO-Fbn" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="IRO-XO-h9j"/>
                                     <constraint firstItem="tMK-O2-7Gf" firstAttribute="leading" secondItem="aNA-Cf-5WT" secondAttribute="trailing" constant="10" id="JNC-fc-X4H"/>
                                     <constraint firstItem="tMK-O2-7Gf" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="JTk-MU-ULx"/>
                                     <constraint firstItem="V69-wI-og1" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="LQd-Yj-G8y"/>
                                     <constraint firstItem="xbs-GV-RCI" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="U86-c3-bKO"/>
+                                    <constraint firstItem="okb-jO-Fbn" firstAttribute="leading" secondItem="1tG-tN-oz3" secondAttribute="trailing" constant="15" id="cWv-Nf-cyY"/>
                                     <constraint firstItem="1tG-tN-oz3" firstAttribute="leading" secondItem="tMK-O2-7Gf" secondAttribute="trailing" id="evc-dZ-8aZ"/>
                                     <constraint firstItem="Vnu-0l-62l" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="fBv-gc-Ikg"/>
                                     <constraint firstItem="GKj-RA-pyx" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="iEG-cv-faK"/>
@@ -857,6 +882,7 @@
                                     <constraint firstItem="1tG-tN-oz3" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="l7e-M7-6vu"/>
                                     <constraint firstItem="tMK-O2-7Gf" firstAttribute="baseline" secondItem="GKj-RA-pyx" secondAttribute="firstBaseline" id="o6Q-Lz-emg"/>
                                     <constraint firstAttribute="trailing" secondItem="tMK-O2-7Gf" secondAttribute="trailing" constant="403" id="qdg-Y2-sOD"/>
+                                    <constraint firstItem="5zx-jh-dUh" firstAttribute="centerY" secondItem="H2I-pz-39L" secondAttribute="centerY" id="rbw-HJ-hvo"/>
                                     <constraint firstItem="tMK-O2-7Gf" firstAttribute="baseline" secondItem="GKj-RA-pyx" secondAttribute="baseline" id="sRb-do-hIc"/>
                                     <constraint firstItem="Vnu-0l-62l" firstAttribute="leading" secondItem="GKj-RA-pyx" secondAttribute="trailing" constant="30" id="xe8-GL-vqS"/>
                                     <constraint firstItem="GKj-RA-pyx" firstAttribute="leading" secondItem="xbs-GV-RCI" secondAttribute="trailing" constant="10" id="y3H-Ah-FMb"/>
