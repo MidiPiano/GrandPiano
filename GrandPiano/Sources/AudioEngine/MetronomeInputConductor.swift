@@ -51,6 +51,7 @@ class MetronomeInputConductor: InputConductor {
   }
 
   public private(set) var input: AppleSampler
+  public private(set) var isStarted: Bool = false
 
 
   // MARK: - Private Properties
@@ -68,6 +69,7 @@ class MetronomeInputConductor: InputConductor {
     _ = sequencer.addTrack(for: input)
 
     updateSequencer()
+    stop()
   }
 
   func updateSequencer() {
@@ -81,14 +83,6 @@ class MetronomeInputConductor: InputConductor {
     for beat in 1 ..< data.timeSignatureTop {
       track.sequence.add(noteNumber: data.beatNoteNumber, velocity: vel, position: Double(beat), duration: 0.1)
     }
-
-    /*track = sequencer.tracks[1]
-    track.length = Double(data.timeSignatureTop)
-    track.clear()
-    for beat in 0 ..< data.timeSignatureTop {
-      track.sequence.add(noteNumber: MIDINoteNumber(beat), position: Double(beat), duration: 0.1)
-    }
-     */
   }
 
 
@@ -97,10 +91,12 @@ class MetronomeInputConductor: InputConductor {
   func start() throws {
     input.start()
     sequencer.playFromStart()
+    isStarted = true
   }
 
   func stop() {
     input.stop()
     sequencer.stop()
+    isStarted = false
   }
 }

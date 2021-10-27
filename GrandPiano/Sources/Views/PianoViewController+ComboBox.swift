@@ -70,16 +70,16 @@ extension PianoViewController: NSComboBoxDataSource, NSComboBoxDelegate, MidiSet
     self.endpointInfos = endpointInfos
     self.deviceSelector.reloadData()
 
-    guard endpointInfos.first(where: { info in
+    if endpointInfos.first(where: { info in
       inputConductor.midiEndpoint != nil && info.midiUniqueID == inputConductor.midiEndpoint!.midiUniqueID
-    }) != nil else {
+    }) == nil {
       deviceSelector.deselectItem(at: 0)
-      return
     }
 
     if endpointInfos.count > 0 {
       DispatchQueue.main.async {
         self.deviceSelector.selectItem(at: 0)
+        self.deviceSelector.objectValue = self.endpointInfos[0].displayName
       }
     }
   }

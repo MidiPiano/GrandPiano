@@ -42,7 +42,7 @@ import PianoView
   }
   @objc dynamic internal var bpm: Int = 100 {
     didSet {
-      let playing = metronome.input.isStarted
+      let playing = metronome.isStarted
 
       if playing {
         metronome.stop()
