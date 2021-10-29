@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9034C31272C6EAF0066CAD1 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E9034C30272C6EAF0066CAD1 /* Credits.rtf */; };
 		E91940502728053D0028BDE8 /* MetronomeInputConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E919404F2728053D0028BDE8 /* MetronomeInputConductor.swift */; };
 		E91940542728918D0028BDE8 /* Metronom.sf2 in Resources */ = {isa = PBXBuildFile; fileRef = E91940532728918D0028BDE8 /* Metronom.sf2 */; };
 		E92A81DF2724A23D008B3F27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92A81DE2724A23D008B3F27 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9034C30272C6EAF0066CAD1 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		E919404F2728053D0028BDE8 /* MetronomeInputConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeInputConductor.swift; sourceTree = "<group>"; };
 		E91940532728918D0028BDE8 /* Metronom.sf2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Metronom.sf2; sourceTree = "<group>"; };
 		E92A81DB2724A23D008B3F27 /* GrandPiano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrandPiano.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 				E92A81E72724A23F008B3F27 /* GrandPiano.entitlements */,
 				E91940532728918D0028BDE8 /* Metronom.sf2 */,
 				E92A81F92724AEED008B3F27 /* Piano.sf2 */,
+				E9034C30272C6EAF0066CAD1 /* Credits.rtf */,
 			);
 			name = Ressources;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9034C31272C6EAF0066CAD1 /* Credits.rtf in Resources */,
 				E92A81FA2724AEED008B3F27 /* Piano.sf2 in Resources */,
 				E92A81E32724A23F008B3F27 /* Assets.xcassets in Resources */,
 				E91940542728918D0028BDE8 /* Metronom.sf2 in Resources */,
