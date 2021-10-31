@@ -28,6 +28,7 @@ import PianoView
   // MARK: - Private Properties
 
   @IBOutlet internal var deviceSelector: NSComboBox!
+  @IBOutlet internal var midiTrainerView: MidiTrainerView!
   @IBOutlet internal var piano: PianoView!
 
   @objc dynamic internal var volume: Int = 50 {
@@ -82,7 +83,11 @@ import PianoView
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    initializeMidiTrainer()
+    initializeSoundEngine()
+  }
 
+  private func initializeSoundEngine() {
     // TODO Error handling
     inputConductor = try? MidiInputConductor(keyboardHandler: piano, volumeHandler: self, midiSetupChangedHandler: self)
     metronome = try? MetronomeInputConductor()
